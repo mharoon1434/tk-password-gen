@@ -19,7 +19,7 @@ class passwrodgenerater:
         result_box.insert(0, "CLICK GENERATE")
         result_box.config(state="readonly", font=("Times New Roman", 12))
 
-        # set lenght of password
+        # set length of password
         frame_length=tk.Frame(self.root)
         frame_length.pack()
         tk.Label(frame_length, text="length", font=("Arial", 12),bg="#0b032d" , fg="#fff")
