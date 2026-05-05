@@ -42,7 +42,11 @@ class passwrodgenerater:
         self.create_option("Include Numbers")
         self.create_option("Include Symbols")
 
-
+         # Generate Button
+        self.gen_btn = tk.Button(self.root, text="GENERATE PASSWORD", bg="#6c63ff", 
+                                 fg="white", font=("Arial", 11, "bold"), 
+                                 relief="flat", pady=10, cursor="hand2")
+        self.gen_btn.pack(fill="x", padx=40, pady=30)
         self.root.mainloop()
 
 
