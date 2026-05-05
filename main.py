@@ -8,23 +8,34 @@ class passwrodgenerater:
         self.root.config(bg="#0b032d")
 
         # label name
-        label=tk.Label(self.root, text="Password Generator", 
+        self.label=tk.Label(self.root, text="Password Generator", 
         font=("Times New Roman", 20), fg="#fff", anchor="w", bg="#0b032d")
-        label.pack(fill="x", padx=10, pady=10)
+        self.label.pack(fill="x", padx=10, pady=10)
         
         # result box
-        result_box=tk.Entry(self.root, width=48,justify='center',  readonlybackground="#0b032d", fg="#fff")
-        result_box.pack(ipady=8, pady=5)
-        result_box.config(state='normal')
-        result_box.insert(0, "CLICK GENERATE")
-        result_box.config(state="readonly", font=("Times New Roman", 12))
+        self.result_box=tk.Entry(self.root, width=48,justify='center',  readonlybackground="#0b032d", fg="#fff")
+        self.result_box.pack(ipady=8, pady=5)
+        self.result_box.config(state='normal')
+        self.result_box.insert(0, "CLICK GENERATE")
+        self.result_box.config(state="readonly", font=("Times New Roman", 12))
+
 
         # set length of password
-        frame_length=tk.Frame(self.root)
-        frame_length.pack()
-        tk.Label(frame_length, text="length", font=("Arial", 12),bg="#0b032d" , fg="#fff")
-        count_label=tk.Label(frame_length, text="0",bg="#0b032d", fg="#fff")
-        count_label.pack(side='left')
+        self.length_var = tk.StringVar(value="LENGTH: 16")
+        self.length_label = tk.Label(self.root, textvariable=self.length_var, 
+                                     font=("Arial", 10, "bold"), bg="#0b032d", fg="#777")
+        self.length_label.pack(anchor="w", padx=40)
+
+        # The 'command' calls self.update_length every time the slider moves
+        self.slider = tk.Scale(self.root, from_=4, to=32, orient="horizontal", 
+                               bg="#0b032d", fg="#fff", highlightthickness=0,
+                               troughcolor="#161b33", command=self.update_length)
+        self.slider.set(16)
+        self.slider.pack(fill="x", padx=40, pady=(0, 20))
 
         self.root.mainloop()
+    def update_length(self, value):
+        self.length_var.set(f"LENGTH: {value}")
+        
+        
 passwrodgenerater()
