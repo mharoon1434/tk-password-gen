@@ -52,7 +52,6 @@ class passwrodgenerater:
 
     def update_length(self, value):
         self.length_var.set(f"LENGTH: {value}")
-        
     def create_option(self, text):
         #Creates a row with a label and a toggle-style checkbox
         frame = tk.Frame(self.root, bg="#0b032d")
@@ -62,4 +61,5 @@ class passwrodgenerater:
         cb = tk.Checkbutton(frame, bg="#0b032d", activebackground="#0b032d", 
                             selectcolor="#161b33", bd=0)
         cb.pack(side="right")
+
 passwrodgenerater()
