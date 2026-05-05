@@ -42,7 +42,7 @@ class passwrodgenerater:
         self.create_option("Include Numbers")
         self.create_option("Include Symbols")
 
-        
+
         self.root.mainloop()
 
 
@@ -50,7 +50,7 @@ class passwrodgenerater:
         self.length_var.set(f"LENGTH: {value}")
         
     def create_option(self, text):
-        """Creates a row with a label and a toggle-style checkbox"""
+        #Creates a row with a label and a toggle-style checkbox
         frame = tk.Frame(self.root, bg="#0b032d")
         frame.pack(fill="x", padx=40, pady=5)
         
