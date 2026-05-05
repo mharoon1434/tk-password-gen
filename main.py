@@ -33,9 +33,29 @@ class passwrodgenerater:
         self.slider.set(16)
         self.slider.pack(fill="x", padx=40, pady=(0, 20))
 
+         # --- Settings Section ---
+        tk.Label(self.root, text="SETTINGS", font=("Arial", 9, "bold"), 
+                 bg="#0b032d", fg="#777").pack(anchor="w", padx=40, pady=5)
+
+        self.create_option("Include Uppercase")
+        self.create_option("Include Lowercase")
+        self.create_option("Include Numbers")
+        self.create_option("Include Symbols")
+
+        
         self.root.mainloop()
+
+
     def update_length(self, value):
         self.length_var.set(f"LENGTH: {value}")
         
+    def create_option(self, text):
+        """Creates a row with a label and a toggle-style checkbox"""
+        frame = tk.Frame(self.root, bg="#0b032d")
+        frame.pack(fill="x", padx=40, pady=5)
         
+        tk.Label(frame, text=text, fg="#fff", bg="#0b032d", font=("Arial", 10)).pack(side="left")
+        cb = tk.Checkbutton(frame, bg="#0b032d", activebackground="#0b032d", 
+                            selectcolor="#161b33", bd=0)
+        cb.pack(side="right")
 passwrodgenerater()
