@@ -39,18 +39,14 @@ class passwrodgenerater:
 
         #Creates a row with a label and a toggle-style checkbox
         
-        self.valu=self.create_option()
-        print(self.valu)
+        option=["Uppercase", "Lowercase", "Numbers", "Symbol"]
+        self.all_val={}
+        for name in option:
+            self.valu=self.create_option(name)
+            self.all_val[name]:valu
 
 
 
-
-        # self.upper_value=self.create_option("Include Upercase")
-        # self.create_option("Include Lowercase")
-        # self.create_option("Include Numbers")
-        # self.create_option("Include Symbols")
-
-        # print(self.upper_value)
          # Generate Button
         self.gen_btn = tk.Button(self.root, text="GENERATE PASSWORD", bg="#6c63ff", 
                                  fg="white", font=("Arial", 11, "bold"), 
@@ -65,20 +61,16 @@ class passwrodgenerater:
         print(self.upper_value)
     def update_length(self, value):
         self.length_var.set(f"LENGTH: {value}")
-    def create_option(parent):
-        frame = tk.Frame(parent.root, bg="#0b032d")   
+    def create_option(parient,text):
+        frame = tk.Frame(parient.root, bg="#0b032d")   
         frame.pack(fill='x', padx=40, pady=5)
-        
-        option=["Uppercase", "Lowercase", "Numbers", "Symbol"]
-        all_val={}
         var=tk.BooleanVar
-        tk.Label(frame, fg="#fff", text="Include "+ option[0],bg="#0b032d", font=("Arial", 10)).pack(side="left")
+        tk.Label(frame, fg="#fff", text="Include " +text,bg="#0b032d", font=("Arial", 10)).pack(side="left")
         cb = tk.Checkbutton(frame, bg="#0b032d", activebackground="#0b032d", 
-                            selectcolor="#161b33", bd=0, variable=var, command=parent.changeState, anchor='w')
-        cb.pack(side="right")
-        all_val[option[0]]=var
-
-        return all_val
+                            selectcolor="#161b33", bd=0, variable=var, command=parient.changeState)
+        cb.pack(side="right", pady=2, anchor='w')
+        return var
+       
     # def generatePassword():
 
 passwrodgenerater()
