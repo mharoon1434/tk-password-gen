@@ -37,29 +37,48 @@ class passwrodgenerater:
         tk.Label(self.root, text="SETTINGS", font=("Arial", 9, "bold"), 
                  bg="#0b032d", fg="#777").pack(anchor="w", padx=40, pady=5)
 
-        self.create_option("Include Uppercase")
-        self.create_option("Include Lowercase")
-        self.create_option("Include Numbers")
-        self.create_option("Include Symbols")
+        #Creates a row with a label and a toggle-style checkbox
+        
+        self.valu=self.create_option()
+        print(self.valu)
 
+
+
+
+        # self.upper_value=self.create_option("Include Upercase")
+        # self.create_option("Include Lowercase")
+        # self.create_option("Include Numbers")
+        # self.create_option("Include Symbols")
+
+        # print(self.upper_value)
          # Generate Button
         self.gen_btn = tk.Button(self.root, text="GENERATE PASSWORD", bg="#6c63ff", 
                                  fg="white", font=("Arial", 11, "bold"), 
                                  relief="flat", pady=10, cursor="hand2")
         self.gen_btn.pack(fill="x", padx=40, pady=30)
         self.root.mainloop()
+      
+        
 
-
+    def changeState(*args):
+        self.upper_value=var.get()
+        print(self.upper_value)
     def update_length(self, value):
         self.length_var.set(f"LENGTH: {value}")
-    def create_option(self, text):
-        #Creates a row with a label and a toggle-style checkbox
-        frame = tk.Frame(self.root, bg="#0b032d")
-        frame.pack(fill="x", padx=40, pady=5)
+    def create_option(parent):
+        frame = tk.Frame(parent.root, bg="#0b032d")   
+        frame.pack(fill='x', padx=40, pady=5)
         
-        tk.Label(frame, text=text, fg="#fff", bg="#0b032d", font=("Arial", 10)).pack(side="left")
+        option=["Uppercase", "Lowercase", "Numbers", "Symbol"]
+        all_val={}
+        var=tk.BooleanVar
+        tk.Label(frame, fg="#fff", text="Include "+ option[0],bg="#0b032d", font=("Arial", 10)).pack(side="left")
         cb = tk.Checkbutton(frame, bg="#0b032d", activebackground="#0b032d", 
-                            selectcolor="#161b33", bd=0)
+                            selectcolor="#161b33", bd=0, variable=var, command=parent.changeState, anchor='w')
         cb.pack(side="right")
+        all_val[option[0]]=var
+
+        return all_val
+    # def generatePassword():
 
 passwrodgenerater()
