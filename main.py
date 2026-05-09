@@ -1,5 +1,5 @@
 import tkinter as tk
-
+import random
 class passwrodgenerater:
     def __init__(self):
         self.root = tk.Tk()
@@ -22,6 +22,7 @@ class passwrodgenerater:
 
         # set length of password
         self.length_var = tk.StringVar(value="LENGTH: 16")
+        self.pass_length=16
         self.length_label = tk.Label(self.root, textvariable=self.length_var, 
                                      font=("Arial", 10, "bold"), bg="#0b032d", fg="#777")
         self.length_label.pack(anchor="w", padx=40)
@@ -50,8 +51,9 @@ class passwrodgenerater:
          # Generate Button
         self.gen_btn = tk.Button(self.root, text="GENERATE PASSWORD", bg="#6c63ff", 
                                  fg="white", font=("Arial", 11, "bold"), 
-                                 relief="flat", pady=10, cursor="hand2")
+                                 relief="flat", pady=10, cursor="hand2", command=self.generatePassword)
         self.gen_btn.pack(fill="x", padx=40, pady=30)
+        
         self.root.mainloop()
       
         
@@ -64,9 +66,9 @@ class passwrodgenerater:
             print(name, "=", var.get())
 
         print("----------------")
-
     def update_length(self, value):
         self.length_var.set(f"LENGTH: {value}")
+        self.pass_length=value
     def create_option(parient,text):
         frame = tk.Frame(parient.root, bg="#0b032d")   
         frame.pack(fill='x', padx=40, pady=5)
@@ -77,6 +79,11 @@ class passwrodgenerater:
         cb.pack(side="right", pady=2, anchor='w')
         return check_var
        
-    # def generatePassword():
-
+    def generatePassword(self):
+        lis=[0,1,2,3,4,5,6,7,8,9]
+        password =''
+        for i in range(int(self.pass_length)):
+            ch=random.random()
+            password=password+str(int(ch))
+        print(password, self.pass_length)
 passwrodgenerater()
