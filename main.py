@@ -42,9 +42,9 @@ class passwrodgenerater:
         option=["Uppercase", "Lowercase", "Numbers", "Symbol"]
         self.all_val={}
         for name in option:
-            self.valu=self.create_option(name)
-            self.all_val[name]:valu
+            value = self.create_option(name)
 
+            self.all_val[name] = value
 
 
          # Generate Button
@@ -56,20 +56,26 @@ class passwrodgenerater:
       
         
 
-    def changeState(*args):
-        self.upper_value=var.get()
-        print(self.upper_value)
+    def changeState(self):
+        print("Current States:\n")
+
+        for name, var in self.all_val.items():
+
+            print(name, "=", var.get())
+
+        print("----------------")
+
     def update_length(self, value):
         self.length_var.set(f"LENGTH: {value}")
     def create_option(parient,text):
         frame = tk.Frame(parient.root, bg="#0b032d")   
         frame.pack(fill='x', padx=40, pady=5)
-        var=tk.BooleanVar
+        check_var =tk.IntVar()
         tk.Label(frame, fg="#fff", text="Include " +text,bg="#0b032d", font=("Arial", 10)).pack(side="left")
         cb = tk.Checkbutton(frame, bg="#0b032d", activebackground="#0b032d", 
-                            selectcolor="#161b33", bd=0, variable=var, command=parient.changeState)
+                            selectcolor="#161b33", bd=0, variable=check_var, command=parient.changeState)
         cb.pack(side="right", pady=2, anchor='w')
-        return var
+        return check_var
        
     # def generatePassword():
 
