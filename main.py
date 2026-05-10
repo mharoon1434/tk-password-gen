@@ -45,7 +45,6 @@ class passwrodgenerater:
         self.all_val={}
         for name in option:
             value = self.create_option(name)
-
             self.all_val[name] = value
 
 
@@ -56,17 +55,8 @@ class passwrodgenerater:
         self.gen_btn.pack(fill="x", padx=40, pady=30)
         
         self.root.mainloop()
-      
-        
 
-    def changeState(self):
-        print("Current States:\n")
 
-        for name, var in self.all_val.items():
-
-            print(name, "=", var.get())
-
-        print("----------------")
     def update_length(self, value):
         self.length_var.set(f"LENGTH: {value}")
         self.pass_length=value
@@ -76,31 +66,41 @@ class passwrodgenerater:
         check_var =tk.IntVar()
         tk.Label(frame, fg="#fff", text="Include " +text,bg="#0b032d", font=("Arial", 10)).pack(side="left")
         cb = tk.Checkbutton(frame, bg="#0b032d", activebackground="#0b032d", 
-                            selectcolor="#161b33", bd=0, variable=check_var, command=parient.changeState)
+                            selectcolor="#161b33", bd=0, variable=check_var)
         cb.pack(side="right", pady=2, anchor='w')
         return check_var
-       
+    # core logic
     def generatePassword(self):
-        lis=[0,1,2,3,4,5,6,7,8,9]
         password =''
-        for i in range(int(self.pass_length)):
-            choice=random.randint(1,4)
-            no=random.randint(1,9)
-            chL=random.choice(string.ascii_lowercase)
-            chU=random.choice(string.ascii_uppercase)
-            chS=random.choice(string.punctuation)
-            if choice==1:
-                password=password+str(no)
-            if choice==2:
-                password=password+str(chL)
-            if choice==3:
-                password=password+str(chU)
-            if choice==4:
-                password=password+str(chS)
+        loop_count=0
+        while len(password)<=int(self.pass_length)+1 and loop_count<int(self.pass_length):
+            for i in range(int(self.pass_length)):
+                if len(password)==int(self.pass_length):
+                    continue
+                choice=random.randint(1,4)
+                if self.all_val["Numbers"].get()==1 and choice ==1:
+                    no=random.randint(1,9)
+                    password=password+str(no)
+                elif self.all_val["Lowercase"].get()==1 and choice ==2:
+                    chL=random.choice(string.ascii_lowercase)
+                    password=password+str(chL)
+                elif self.all_val["Uppercase"].get()==1 and choice ==3:
+                    chU=random.choice(string.ascii_uppercase)
+                    password=password+str(chU)
+                elif self.all_val["Symbol"].get()==1 and choice ==4:
+                    chS=random.choice(string.punctuation)
+                    password=password+str(chS)
+                else:
+                    loop_count=loop_count-1
+            else:
+                loop_count=loop_count+1
+
         self.changepasswrod(password)
     def changepasswrod(self, passw):
+        if len(passw)==0:
+            passw="ERROR"
         self.result_box.config(state='normal',justify='center',  bg="#0b032d", fg="#fff")
-        self.result_box.delete(0,tk.END)
+        self.result_box.delete(0,tk.END)    
         self.result_box.insert(0, passw)
 passwrodgenerater()
   
