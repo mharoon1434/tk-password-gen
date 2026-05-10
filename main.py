@@ -1,5 +1,6 @@
 import tkinter as tk
 import random
+import string
 class passwrodgenerater:
     def __init__(self):
         self.root = tk.Tk()
@@ -83,10 +84,20 @@ class passwrodgenerater:
         lis=[0,1,2,3,4,5,6,7,8,9]
         password =''
         for i in range(int(self.pass_length)):
-            ch=random.randint(1,9)
-            password=password+str(int(ch))
+            choice=random.randint(1,4)
+            no=random.randint(1,9)
+            chL=random.choice(string.ascii_lowercase)
+            chU=random.choice(string.ascii_uppercase)
+            chS=random.choice(string.punctuation)
+            if choice==1:
+                password=password+str(no)
+            if choice==2:
+                password=password+str(chL)
+            if choice==3:
+                password=password+str(chU)
+            if choice==4:
+                password=password+str(chS)
         self.changepasswrod(password)
-        print(password, self.pass_length)
     def changepasswrod(self, passw):
         self.result_box.config(state='normal',justify='center',  bg="#0b032d", fg="#fff")
         self.result_box.delete(0,tk.END)
