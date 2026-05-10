@@ -1,4 +1,4 @@
-# 🔐 Password Generator
+# Password Generator
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python">
@@ -12,7 +12,7 @@
 
 ---
 
-## 📌 Overview
+## Overview
 
 This project is a desktop-based Password Generator Application developed using Python Tkinter GUI.
 
@@ -28,7 +28,7 @@ The project features a clean and modern dark-themed interface for a professional
 
 ---
 
-## ✨ Features
+## Features
 
 ✔ Modern GUI using Tkinter  
 ✔ Adjustable password length slider  
@@ -45,7 +45,7 @@ The project features a clean and modern dark-themed interface for a professional
 
 ---
 
-## 🖼️ Project Preview
+## Project Preview
 
 <p align="center">
   <img src="https://via.placeholder.com/800x400.png?text=Password+Generator+App+Preview" width="85%">
@@ -55,7 +55,7 @@ The project features a clean and modern dark-themed interface for a professional
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 <table>
 <tr>
@@ -76,7 +76,7 @@ The project features a clean and modern dark-themed interface for a professional
 
 ---
 
-# 📂 Project Structure
+# Project Structure
 
 ```bash
 Password-Generator/
@@ -88,7 +88,7 @@ Password-Generator/
 
 ---
 
-# ⚙️ Installation
+# Installation
 
 ## 1️⃣ Clone Repository
 
@@ -102,15 +102,15 @@ git clone https://github.com/your-username/password-generator.git
 cd password-generator
 ```
 
-## 3️⃣ Run Application
+## Run Application
 
 ```bash
-python password_generator.py
+main.py
 ```
 
 ---
 
-# 🚀 How To Use
+# How To Use
 
 ### Step 1
 Select the password length using the slider.
@@ -130,7 +130,7 @@ Your generated password will appear instantly.
 
 ---
 
-# 🧠 Concepts Used
+# Concepts Used
 
 - Object-Oriented Programming (OOP)
 - Tkinter GUI Development
@@ -162,53 +162,7 @@ libraries.
 
 ---
 
-# 📸 Recommended Improvements
 
-You can improve this project by adding:
-
-- 📋 Copy Password Button
-- 🔍 Password Strength Checker
-- 💾 Save Password Feature
-- 🌙 Light/Dark Mode Toggle
-- 📁 Export Passwords to File
-- 🔐 Encryption Support
-
----
-
-# 🔒 Security Note
-
-This application generates passwords locally on your computer.
-
-No data is stored online or shared externally.
-
----
-
-# 👨‍💻 Author
-
-## Muhammad Haroon
-
-<p>
-📧 Email: m.haroon.4550@gmail.com <br>
-📱 Phone: 03109336478
-</p>
-
----
-
-# 🌟 Support
-
-If you like this project:
-
-⭐ Star the repository  
-🍴 Fork the project  
-📢 Share it with others  
-
----
-
-# 📄 License
-
-This project is licensed under the MIT License.
-
----
 
 # ❤️ Made With
 
