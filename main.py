@@ -83,7 +83,13 @@ class passwrodgenerater:
         lis=[0,1,2,3,4,5,6,7,8,9]
         password =''
         for i in range(int(self.pass_length)):
-            ch=random.random()
+            ch=random.randint(1,9)
             password=password+str(int(ch))
+        self.changepasswrod(password)
         print(password, self.pass_length)
+    def changepasswrod(self, passw):
+        self.result_box.config(state='normal',justify='center',  bg="#0b032d", fg="#fff")
+        self.result_box.delete(0,tk.END)
+        self.result_box.insert(0, passw)
 passwrodgenerater()
+  
