@@ -33,10 +33,11 @@ The project features a clean and modern dark-themed interface for a professional
 Modern GUI using Tkinter  
 Adjustable password length slider  
 Include/exclude:
-    - Uppercase letters
-    - Lowercase letters
-    - Numbers
-    - Symbols
+
+          - Uppercase letters
+          - Lowercase letters
+          - Numbers
+          - Symbols
 
 Random secure password generation  
 Dark-themed professional interface  
