@@ -18,11 +18,11 @@ This project is a desktop-based Password Generator Application developed using P
 
 The application allows users to generate strong and secure passwords with customizable options such as:
 
-- Uppercase Letters
-- Lowercase Letters
-- Numbers
-- Symbols
-- Adjustable Password Length
+    - Uppercase Letters
+    - Lowercase Letters
+    - Numbers
+    - Symbols
+    - Adjustable Password Length
 
 The project features a clean and modern dark-themed interface for a professional user experience.
 
@@ -30,18 +30,18 @@ The project features a clean and modern dark-themed interface for a professional
 
 ## Features
 
-✔ Modern GUI using Tkinter  
-✔ Adjustable password length slider  
-✔ Include/exclude:
-- Uppercase letters
-- Lowercase letters
-- Numbers
-- Symbols
+Modern GUI using Tkinter  
+Adjustable password length slider  
+Include/exclude:
+    - Uppercase letters
+    - Lowercase letters
+    - Numbers
+    - Symbols
 
-✔ Random secure password generation  
-✔ Dark-themed professional interface  
-✔ Lightweight and easy to use  
-✔ Beginner-friendly Python project  
+Random secure password generation  
+Dark-themed professional interface  
+Lightweight and easy to use  
+Beginner-friendly Python project  
 
 ---
 
@@ -81,7 +81,7 @@ The project features a clean and modern dark-themed interface for a professional
 ```bash
 Password-Generator/
 │
-├── password_generator.py
+├── main.py
 ├── README.md
 └── screenshots/
 ```
@@ -90,13 +90,13 @@ Password-Generator/
 
 # Installation
 
-## 1️⃣ Clone Repository
+## Clone Repository
 
 ```bash
 git clone https://github.com/your-username/password-generator.git
 ```
 
-## 2️⃣ Open Project Folder
+## Open Project Folder
 
 ```bash
 cd password-generator
@@ -141,7 +141,7 @@ Your generated password will appear instantly.
 
 ---
 
-# 💻 Main Functionalities
+# Main Functionalities
 
 ## 🔹 Password Length Control
 Users can choose password length from 4 to 32 characters.
