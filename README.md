@@ -1,6 +1,6 @@
 # Password Generator
 
-<p align="center">
+<p align="left">
   <img src="https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python">
   <img src="https://img.shields.io/badge/Tkinter-GUI-green?style=for-the-badge">
   <img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge">
