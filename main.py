@@ -70,13 +70,21 @@ class passwrodgenerater:
         cb.pack(side="right", pady=2, anchor='w')
         return check_var
     # core logic
+
+    def isAllZero(self):
+        iszero=False
+        for key, value in self.all_val.items():
+            if value.get() !=0:
+                iszero=True
+        return iszero    
     def generatePassword(self):
         password =''
         loop_count=0
-        while len(password)<=int(self.pass_length)+1 and loop_count<int(self.pass_length):
-            for i in range(int(self.pass_length)):
-                if len(password)==int(self.pass_length):
-                    continue
+        if  not self.isAllZero():
+            self.changepasswrod(password)
+            return
+        else:
+            while len(password)<int(self.pass_length):
                 choice=random.randint(1,4)
                 if self.all_val["Numbers"].get()==1 and choice ==1:
                     no=random.randint(1,9)
@@ -90,12 +98,7 @@ class passwrodgenerater:
                 elif self.all_val["Symbol"].get()==1 and choice ==4:
                     chS=random.choice(string.punctuation)
                     password=password+str(chS)
-                else:
-                    loop_count=loop_count-1
-            else:
-                loop_count=loop_count+1
-
-        self.changepasswrod(password)
+            self.changepasswrod(password)
     def changepasswrod(self, passw):
         if len(passw)==0:
             passw="ERROR"
